@@ -1,0 +1,294 @@
+/*
+
+
+// REACT NOTES
+
+// ARROW FUNCTION -
+
+
+//NORMAL FUNCTION IN JAVASCRIPT
+function func(num){
+
+    console.log(num);
+
+};
+
+//ARROW FUNCTION IN JAVASCRIPT
+
+let func = (num) => {
+    
+    console.log(num);
+
+};
+
+
+// BUT IF WE HAVE SINGLE ARGUMENT THEN WE CAN MORE REDUCE  IT
+
+let double = num => num*2;
+
+console.log(double(5));
+
+//OUTPUT WILL BE 10
+
+
+// INHERITANCE IN REACT IS DONE USING EXTENDS KEYWORD
+
+//WITH ES6 WE CAN NOW ADD ARROW FUNCTIONS AND ALSO VARIABLE CAN BE INITIALISED DIRECTLY WITHOUT USING THIS KEYWORD
+
+//SPREAD AND REST OPERATOR 
+
+// SPREAD OPERATOR IS USED TO ADD SOMETHING  OR COPY  USING ...
+
+let arr1=["Kunal","Harsh","Ayush"];
+let arr2=[...obj1,"Sachin"];
+
+// ...arr1 means arr1 value is copied into arr2 --- arr2 =["Kunal","Harsh","Ayush","Sachin"];
+
+// Similarly we can also do it for object -
+
+let obj1 = {
+
+    fname:"Kunal",
+    year:"4th"
+
+
+
+
+};
+
+let obj2 ={
+
+    ...obj1,
+    age: 22
+
+};
+
+// so obj2 contains fname,year,age feilds 
+
+//-----------------------------------------------------------------------------------------------
+
+// REST OPERATOR IS USED WITH ARGUMENT WHICH SAVE CODER FROM ARGUMENTS COUNT ERROR
+
+function func(){
+
+    console.log();
+}
+
+// So function call can have any number of arguments and to maintain and know their count at runtime can be a hard task so we use rest operator in arguments
+// func(5,6,7,8,..);
+
+// use like this -
+
+
+function func(...all){
+
+    console.log(all);
+}
+
+
+//So ... stores all arguments in a  array called all ,whose element can be accessed like we access array elements
+
+//ARRAY DESTRUCTURING - array  ke elements ko directly store kran kisi variable mein without accessing all elements
+
+let arr=["Kunal","Harsh","Ayush"];
+
+//destructuring
+
+// let [name1,name2,name3]=arr;
+
+//wuth this name1=kunal, name2=harsh , name3=Ayush
+
+//VALID
+
+let [name1,,name3]=arr;
+// ITS JUST THAT WE HAVE STORED VALUE OF KUNAL, AND AYUSH IN A VARIABLE BUT HARSH IS NOT STORED
+
+
+//OBJECT DESTRUCTURING
+
+let obj={
+
+    fname:"Kishlay",
+    lname:"Kunal"
+
+};
+
+//to access its properties we use like this obj.fname
+
+//However using destructuring we can just store their values in a varable
+
+let {fname,lname}=obj;
+
+console.log(fname);  // output is Kishlay , note no need to use . operator
+console.log(lname);  // output is Kunal
+ 
+//REFERENCE(array,object)  and primitive datatype (string,number)
+
+// that is if we do let var2=var1 so in that case var1 value is copied into var2 changing either of var1 or var 2 doesnt effect other
+
+//however in case of array and object values are not copied rather they are pointed using pointer so changing one will change other
+
+let obj1={
+
+    fname:"Kishlay",
+    lname:"Kunal"
+
+};
+
+let obj2=obj1;
+
+obj2.fname="Harsh";
+
+// these two will give same values
+console.log(obj1);
+console.log(obj2);
+
+//MAP
+
+let arr1=[2,3,4,5];
+
+let arr2=arr1.map( function(x){
+
+    return x*2;
+
+});            //OUTPUT WILL BE 4,6,8,10 AND IT WILL BE STORED IN ARR2 THAT IS MAP WILL TAKE ELEMENT FROM ARR1 ONE BY ONE DO THE OPERATION DECLARED IN function and stored its values in arr2
+
+
+
+let arr2=arr1.map( x => ( x*2 )); 
+
+
+
+
+//FILTER FUNCTION - USED TO FILTER VALUES FROM ARRAY BASED ON CERTAIN CONDITION
+
+let arr2=arr1.filter(function(x){
+
+
+    if(x%2==0){
+
+        return x;
+    }
+} ); 
+
+//CONVERTED INTO ARROW FUNCTION 
+
+let arr2=arr1.filter( x => x%2==0 );
+
+
+
+//COMPONENTS 
+
+// In react we use components - components are reusable code which can be used again and again for example - our navigation bar we use it in all pages so we will put our navigation bar code in a separate component file and use it by calling its name whenever and whereever necessary
+
+
+*/
+
+
+// CREATE REACT APP
+
+CREATE NEW FOLDER AND MOVE TO THAT FOLDER USING  cd ./
+enter command npx create-react-app app_name OR  npx create-react-app . (it will create react app in that folder )
+
+start app by entering command npm start
+
+To create a basic react app we need complete public file and single index.js file with these code -
+
+
+import ReactDOM from "react-dom";
+
+
+
+ ReactDOM.render(<h2>HII</h2>,document.getElementById('root'));
+
+COMPONENT KA NAME ALWAYS START WITH Capital letter so that it can be differentiated with html elements
+
+ IF WE WANT TO RETURN MORE THAN 1 TAG INSIDE A FUNCTION THEN WE HAVE TO ENCLOSE THEM INSIDE A DIV , WITHOUT IT , IT WILL CAUSE A ERROR 
+
+REACT HIERARCHY -
+
+BROWSWER <- index.html <- index.js <- App.js <- Components
+
+TO ADD CLASS USE className instead of class as we do in css
+
+
+PROPS THAT WE USE IS ALSO A OBJECT AND WE KNOW OBJECT PROPERTIES IS ACCESSED USING . OPERATOR
+
+SO WE CAN ACCESS PROPERTIES LIKE THIS - props.name and since this is javascript hence we have to enclose them inside {} - {props.name}
+
+DATE that we use in javascript is declared like this -
+
+let date = new Date(year,mnth,date);
+
+and we can access mth,day,year like this -
+
+ const month = props.date.toLocaleString('en-US', {month: 'long'});
+
+ const year = props.date.getFullYear();
+
+ const day = props.date.toLocaleString('en-US', {day: '2-digit'});
+
+
+Whenever we write any components call like this -
+
+<Component />
+
+so internally compiler places all the code which is written and return by that component in place of that component
+
+IF U WANT TO KNOW HOW TO USE COMPONENT INSIDE COMPONENT SEE THIS -
+https://www.youtube.com/watch?v=2UknCiav6I8&list=PLjpp5kBQLNTTz1BZXJfU6ZHWKeyzTkgCo&index=10 
+
+TO USE STATES WE HAVE TO IMPORT REACT LIBRARY -
+
+import React from 'react';
+
+To move from current folder we have to use ../
+
+
+To change content or innerhtml of any tag in javascript we have to first select the element using document.getElementById then set its inner html to something
+
+But in react instaed of doing all such work we use STATES 
+
+To use STATES first import state hook called useState hook 
+
+Hooks can be identified be seeing use..  keyword 
+
+useState is basically used to set value
+
+syntax - useState(item_whose_value_t_we_want_to_set)
+usestate return an array having two items - variable and a function and to access them we can use array destructuring
+
+const[variable,set_variable]=useState(props.variable_name)
+
+variable whose will value will keep on changing during run time for that we declare them using States
+
+
+2WAY BINDING - CHANGING/UPDATING VALUE
+GENERALLY USED IN TEXT FEILD TO UPDATE THE VALUE TO ITS ORIGINAL FORM using attribute value={changevalue}
+
+DATA WHICH IS PRESENT IN A COMPONENT CAN BE USED  INSIDE THAT COMPONENT ONLY  THAT IS ITS SCOPE IS ONLY LIMITED TO THAT COMPONENT
+
+//PROPS ARE USED WHEN WE WANT TO PASS DATE FROM PARENT TO CHILD
+
+BUT FOR PASSING/SENDING DATA FROM CHILD TO PARENT WE WILL ALSO USE PROPS BUT IN REVERSE HIERARCHY
+
+DATA CAN BE PAASED FORM PARENT TO ITS IMMEDIATE CHILD USING PROPS AND THEN FROM THAT CHILD TO ITS IMMEDIATE CHILD AND SO ON
+
+IN SIMILAR MANNER FOR PASSING DATA FROM CHILD TO PARENT WE WILL ALSO FOLLOW HIERARCHY THAT IS FROM CHILD TO ITS IMMEDIATE PARENT AND SO ON......................
+
+
+TO PASS DATA FORM CHILD TO PARENT  STEPS -
+
+1. DECLARE A FUNCTION IN PARENT
+2.PASS THAT FUNCTION AS PROPS TO CHILD
+3.ACESS THAT FUNCTION IN PROPS USING props.variable_name(object_name)
+4.GET THAT OBJECT INSIDE FUNCTION USING A ARGUMENT IN PARENT FUNCTION
+
+ROUTER -
+
+In traditional websites, the browser requests a document from a web server, downloads and evaluates CSS and JavaScript assets, and renders the HTML sent from the server. When the user clicks a link, it starts the process all over again for a new page.
+
+Routing allows our app to update the URL from a link click without making another request for another document from the server. .
+
+This enables faster user experiences because the browser doesn't need to request an entirely new document or re-evaluate CSS and JavaScript assets for the next page. 
+
