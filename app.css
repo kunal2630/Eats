@@ -1,0 +1,173 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+
+
+
+.search{
+
+    padding: 10px;
+}
+
+.top-container{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-container-heading{
+
+    color: #F28C28;
+    margin: auto;
+    margin-left:  210px;
+}
+
+.top-container-search{
+
+    margin: auto;
+    padding: 5px;
+    border: 2px solid #F28C28;
+    display: flex;
+    color:#F28C28;
+    border-radius:10px;
+    
+}
+
+.top-container-search-feild{
+
+    border: none;
+    width: 250px;
+    height: 25px;
+    
+   
+    font-size: 14px;
+    
+}
+
+.top-container-search-feild:focus {
+
+    border-color: #F28C28; 
+    outline: none; /* Remove the default focus outline */
+  }
+
+  
+  
+
+
+
+.RestaurantCard{
+
+    border: 2px solid white; 
+    width: 200px;
+    height:277px;
+    margin: 14px;
+     transition: transform 0.3s ease;
+  
+    
+
+}
+
+
+
+
+.RestaurantCard:hover{
+
+    cursor: pointer;
+    transform: scale(0.94) ;
+   
+  
+
+}
+
+.RestaurantCard > img{
+
+    width: 200px;
+    height:140px;
+    object-fit: cover;
+    border-radius: 20px;
+   
+    
+}
+
+
+
+
+
+.res-card{
+
+  
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 80px 10px 220px;
+}
+
+
+.res-card-info{
+
+    padding: 10px;
+   
+     
+}
+
+
+
+.res-card-info >h3, .res-card-info >p{
+
+    padding-bottom:5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    color: #3D4152;
+    font-size: 16px;
+    font-weight: 80px;
+    
+ 
+  
+
+}
+
+.res-card-info >h3{
+
+    font-size: 19px;
+    font-weight: 200px;
+
+   
+
+
+}
+
+
+
+.filter-btn{
+
+    background-color: #F28C28;
+    margin: 15px ;
+    margin-left: 50px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    
+}
+.filter-btn:hover{
+
+    cursor: pointer;
+
+}
+
+.offline-status-msg{
+
+   
+    color: red;
+    padding: 10px 400px;
+   font-weight: bolder;
+}
