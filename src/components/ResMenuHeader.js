@@ -4,11 +4,12 @@ import ResMenuDescription from './ResMenuDescription';
 
 
 
-const ResMenuHeader = ({data}) =>{
+const ResMenuHeader = ({data,resName,city,imageId,resId}) =>{
 
-
+   // console.log(data);
     const len=data?.itemCards?.length;
     const [showaccordian,setShowaccordian]=useState(true);
+    
 
     const accordian= () =>{
 
@@ -28,7 +29,7 @@ const ResMenuHeader = ({data}) =>{
         <div>
 
             <div className='flex pb-5 justify-between cursor-pointer'  onClick={accordian}>
-                <div className='text-2xl text-[#3e4152] font-bold'>{data.title} ({data?.itemCards?.length})</div>
+                <div className='text-xl md:text-2xl text-[#3e4152] font-bold'>{data.title} ({data?.itemCards?.length})</div>
                 <div><ExpandMoreIcon/></div>
             </div>
 
@@ -37,7 +38,7 @@ const ResMenuHeader = ({data}) =>{
             {
                 data?.itemCards?.map((it,index) => {
                     
-                    
+                   //console.log(data);
                 
 
                     return (
@@ -47,7 +48,7 @@ const ResMenuHeader = ({data}) =>{
                            
                            <> 
                            
-                           <ResMenuDescription key={it?.card?.info?.id} data={it} /> 
+                           <ResMenuDescription key={it?.card?.info?.id} data={it} resName={resName} locality={city} resimageId={imageId} resId={resId} /> 
                            
                            {index<len-1 &&  <div className="border-solid border-b-[1.5px] mt-10 mb-4 h-2 border-[#d3d3d3] "></div>}
                            

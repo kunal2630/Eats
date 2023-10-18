@@ -5,10 +5,10 @@ module.exports = {
             "./src/**/*.{html,js,ts,jsx,tsx}",
 
           ],
+         
   theme: {
-    extend: {
-
-      
+    fontFamily: {
+      'custom': ['ProximaNova', 'arial', 'Helvetica Neue', 'sans-serif'],
     },
   },
   plugins: [],

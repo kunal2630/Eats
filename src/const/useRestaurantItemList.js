@@ -18,6 +18,7 @@ const useRestaurantItemList =(resId) => {
         const list=await fetch(res_item_api+resId);
         const json=await list.json();
         setReslist(json.data);
+       // console.log(resList);
 
 
     };
