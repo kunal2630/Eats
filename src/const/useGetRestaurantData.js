@@ -5,46 +5,25 @@ const useGetRestaurantData = () => {
   const [latitude, setlatitude] = useState();
   const [longitude, setlongitude] = useState();
 
+  const getLocation = async () => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      setlatitude(position.coords.latitude);
+      setlongitude(position.coords.longitude);
+    });
+    const resdata = await fetch(
+        
+      `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&page_type=DESKTOP_WEB_LISTING`
+    );
 
-  const getLocation = async ()=>{
+    const json = await resdata.json();
 
-    navigator.geolocation.getCurrentPosition(
+    setData(json);
+  };
 
-      async (position) => {
-       setlatitude(position.coords.latitude);
-       setlongitude(position.coords.longitude);
-     }
-   );
-   const resdata = await fetch(
-    `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&page_type=DESKTOP_WEB_LISTING`
-
-  );
-
-  
-
-  const json = await resdata.json();
-
-  setData(json);
-
-
-  }
-  
-  useEffect(()=>{
-
-   
+  useEffect(() => {
     getLocation();
+  }, [latitude, longitude]);
 
-  },[latitude,longitude]);
-
-  //console.log(latitude,longitude);
-
-
-  
-
-
-
-
- // console.log(data);
   return data;
 };
 

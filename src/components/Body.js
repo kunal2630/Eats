@@ -18,12 +18,12 @@ const Body = () => {
   const [filterrestaurantList, setFilterRestaurantList] = useState(null);
 
   useEffect(() => {
-    //optional chaining
+    
     setRestaurantList(
-      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
     );
     setFilterRestaurantList(
-      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants  || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
     );
   }, [data]);
 
