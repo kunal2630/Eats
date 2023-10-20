@@ -105,7 +105,7 @@ const Cart = () => {
             </div>
 
             <div className="  flex  items-center justify-between  h-[85px]  ">
-              <div className="flex-col h-[40px] lg:ml-2 gap-2">
+              <div className="flex-col mb-2 h-[40px] lg:ml-2 gap-2">
                 <div className="flex gap-1 items-center justify-center">
                   <img
                     className="md:border-2  md:border-blue-300 rounded-lg  w-[20px]  h-[10px] min-[430px]:w-[30px] min-[430px]:h-[30px] md:w-[40px] md:h-[25px] object-cover shrink-0 lg:border-none "
@@ -141,8 +141,8 @@ const Cart = () => {
                   setPlaceorder(true);
                  
                 }}
-                className="flex rounded-xl lg:rounded-xl bg-orange-400 h-[60px] min-[650px]:h-[70px] min-[800px]:h-[70px]  items-center justify-between px-2  w-[60%]  py-1   text-black  font-semibold hover:cursor-pointer mt-4 min-[750px]:mt-6 
-                 lg:w-[50%] xl:w-[250px] lg:h-[60px] lg:mt-2"
+                className="flex rounded-xl lg:rounded-xl bg-orange-400 h-[60px] min-[700px]:h-[70px] min-[800px]:h-[70px]  items-center justify-between px-2  w-[60%]  py-1   text-black  font-semibold hover:cursor-pointer mt-4 min-[750px]:mt-6 
+                 lg:w-[50%] xl:w-[250px] lg:h-[60px] lg:mt-2 mb-5 md:mb-1"
               >
                 <div className=" px-2">
                   <p className="flex  w-[70px] text-md  min-[400px]:text-md min-[450px]:text-lg min-[650px]:text-2xl  font-bold lg:text-base">
