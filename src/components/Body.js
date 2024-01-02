@@ -18,13 +18,23 @@ const Body = () => {
   const [filterrestaurantList, setFilterRestaurantList] = useState(null);
 
   useEffect(() => {
-    
-    setRestaurantList(
-      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
-    );
-    setFilterRestaurantList(
-      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants  || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
-    );
+
+  for(let i=0;i< data?.data?.cards.length;i++){
+
+    if(data?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants ){
+
+        setRestaurantList(
+          data?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants );
+        setFilterRestaurantList(
+          data?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        );
+
+      break;
+
+    }
+  }
+
+
   }, [data]);
 
   const [searchItem, setsearchItem] = useState();
@@ -41,13 +51,13 @@ const Body = () => {
     const searchList = restaurantList.filter((it) => {
       const filterByName = it.info.name
         .toLowerCase()
-        .includes(searchItem.toLowerCase());
+        .includes(searchItem?.toLowerCase());
 
       const filterCuisines = it.info.cuisines.some((cuisine) =>
         cuisine
           .toLowerCase()
           .replace(/\s+/g, "")
-          .includes(searchItem.toLowerCase().replace(/\s+/g, ""))
+          .includes(searchItem?.toLowerCase().replace(/\s+/g, ""))
       );
 
       return filterByName || filterCuisines;
@@ -83,7 +93,7 @@ const Body = () => {
         </div>
 
         <div
-          className="   rounded-lg  flex  justify-between p-2  my-auto items-center  text-[#F28C28] border-2 border-[#F28C28]  w-[275px] 
+          className="   rounded-lg  flex  justify-between p-2  my-auto items-center  text-[#F28C28] border-2 border-[#F28C28]  w-[275px]
         min-[400px]:w-[340px] min-[450px]:w-[400px] min-[500px]:w-[190px] min-[550px]:w-[223px] min-[600px]:w-[235px] md:w-[290px] lg:w-[280px] min-[1100px]:w-[290px]"
         >
           <input

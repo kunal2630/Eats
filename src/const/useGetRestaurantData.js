@@ -11,8 +11,7 @@ const useGetRestaurantData = () => {
       setlongitude(position.coords.longitude);
     });
     const resdata = await fetch(
-        
-      `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&page_type=DESKTOP_WEB_LISTING`
+      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D30.7416955%26lng%3D76.6480169%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING`
     );
 
     const json = await resdata.json();
