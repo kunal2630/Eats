@@ -38,7 +38,6 @@ const ResMenuHeader = ({data,resName,city,imageId,resId}) =>{
             {
                 data?.itemCards?.map((it,index) => {
                     
-                   //console.log(data);
                 
 
                     return (
@@ -48,7 +47,7 @@ const ResMenuHeader = ({data,resName,city,imageId,resId}) =>{
                            
                            <> 
                            
-                           <ResMenuDescription key={it?.card?.info?.id} data={it} resName={resName} locality={city} resimageId={imageId} resId={resId} /> 
+                           <ResMenuDescription key={index} data={it} resName={resName} locality={city} resimageId={imageId} resId={resId} /> 
                            
                            {index<len-1 &&  <div className="border-solid border-b-[1.5px] mt-10 mb-4 h-2 border-[#d3d3d3] "></div>}
                            
